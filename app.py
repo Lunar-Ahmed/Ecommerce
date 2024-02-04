@@ -1,5 +1,5 @@
 from flask import Flask, appcontext_popped, render_template, request
-# from flask import MySQL
+from flask import MySQL
 
 # mysql= MySQL(app)
 
