@@ -1,7 +1,7 @@
 from flask import Flask, appcontext_popped, render_template, request
 from flask import MySQL
 
-# mysql= MySQL(app)
+mysql= MySQL(app)
 
 app= Flask (__name__)
 
@@ -23,6 +23,7 @@ def register():
     elif request.method =="POST":
         msg = " "
         return render_template("/")
+
 
 
 
