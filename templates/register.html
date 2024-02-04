@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="stati/css/style.css">
 </head>
+
 <body>
-    
+    <div class="container">
+        <h1>REGISTER</h1>
+        <div class="form-box">
+            <div class="links">
+                <a href="/log">Login</a>
+                <a href="/reg" class="active">Register</a>
+            </div>
+            <form action="{{ url_for('reg') }}" method="post" autocomplete="off">
+                <label for="fullname">fullname</label>
+                <input type="text" name="fullname" placeholder="Enter Fullname" id="fullname" required>
+                <br>
+                <br>
+                <label for="username">username</label>
+                <input type="text" name="username" placeholder="Username" id="username" required>
+                <br>
+                <br>
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Email" id="email" requird>
+                <br>
+                <br>
+                <label for="passord">Password</label>
+                <input type="password" name="password" placeholder="Enter Password" id="password" required>
+                <br>
+                <br>
+                <div class="msg">{{ msg }}</div>
+
+                <input type="submit" id="sub" value="Register">
+               
+
+            </form>
+            <script>
+                onclick = document.getElementById('sub').innerHTML = SubmitEvent()
+                onkeypress = document.getElementById('sub').innerHTML = SubmitEvent()
+            </script>
+        </div>
+    </div>
 </body>
+
 </html>

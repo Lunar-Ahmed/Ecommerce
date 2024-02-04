@@ -1,4 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, appcontext_popped, render_template, request
+# from flask import MySQL
+
+# mysql= MySQL(app)
 
 app= Flask (__name__)
 
@@ -6,7 +9,7 @@ app= Flask (__name__)
 def index():
     return render_template('index.html')
 
-@app.route("reg")
+@app.route("/reg")
 def register():
     if request.method== "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
         username = request.form["username"]
