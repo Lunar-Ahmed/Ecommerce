@@ -13,7 +13,7 @@ app.config['MYSQL_DB'] = 'test'
 mysql= MySQL(app)
 
 
-@app.route("/reg")
+@app.route("/")
 def index():
     return render_template('index.html')
 
@@ -28,10 +28,10 @@ def register():
         cursor.execute('INSERT INTO #  VALUES (%s, %s, %s)', (username, password, email))
         mysql.connection.commit()
         msg = " "
-        return render_template('/')
+        return render_template('index.html')
     elif request.method =="POST":
         msg = " "
-        return render_template("/")
+        return render_template("register.html")
 
 
 
@@ -42,4 +42,4 @@ def register():
 
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
