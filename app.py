@@ -19,7 +19,7 @@ def index():
 
 
 @app.route("/reg")
-def register():
+def reg():
     if request.method== "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
         username = request.form["username"]
         email = request.form["email"]
@@ -29,7 +29,7 @@ def register():
         mysql.connection.commit()
         msg = " "
         return render_template('index.html')
-    elif request.method =="POST":
+    elif request.method == "POST":
         msg = " "
         return render_template("register.html")
 
