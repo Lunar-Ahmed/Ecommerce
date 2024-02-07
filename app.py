@@ -30,8 +30,8 @@ def reg():
         msg = " "
         return render_template('index.html')
     elif request.method == "POST":
-        msg = " "
-        return render_template("register.html")
+        msg = "page not found "
+        return render_template("register.html", msg = msg)
 
 
 
