@@ -13,9 +13,10 @@ app.config['MYSQL_DB'] = 'test'
 mysql= MySQL(app)
 
 
-@app.route("/")
+@app.route("/reg")
 def index():
     return render_template('index.html')
+
 
 @app.route("/reg")
 def register():
