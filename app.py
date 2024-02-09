@@ -28,7 +28,7 @@ def reg():
         cursor.execute('INSERT INTO #  VALUES (%s, %s, %s)', (username, password, email))
         mysql.connection.commit()
         msg = " "
-        return render_template('index.html')
+        return render_template('now.html')
     elif request.method == "POST":
         msg = "page not found "
         return render_template("register.html", msg = msg)
