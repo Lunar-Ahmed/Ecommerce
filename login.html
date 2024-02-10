@@ -13,15 +13,10 @@
         <h1>REGISTER</h1>
         <div class="form-box">
             <div class="links">
-                <a href="/log">Login</a>
-                <a href="/reg" class="active">Register</a>
+                <a href="/log" class="active">Login</a>
             </div>
-            <form action="{{ url_for('reg') }}" method="post" autocomplete="off">
+            <form action="{{ url_for('log') }}" method="post" autocomplete="off">
 
-                <label for="username">username</label>
-                <input type="text" name="username" placeholder="Username" id="username" required>
-                <br>
-                <br>
                 <label for="email">Email</label>
                 <input type="email" name="email" placeholder="Email" id="email" requird>
                 <br>
@@ -32,7 +27,7 @@
                 <br>
                 <div class="msg">{{ msg }}</div>
 
-                <input type="submit" id="sub" value="Register">
+                <input type="submit" id="sub" value="Login">
                
 
             </form>

@@ -18,20 +18,22 @@ def index():
     return render_template('index.html')
 
 
-# @app.route("/reg")
-# def reg():
-#     if request.method== "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
-#         username = request.form["username"]
-#         email = request.form["email"]
-#         password = request.form["password"]
-#         cursor = mysql.connection.cursor()
-#         cursor.execute('INSERT INTO #  VALUES (%s, %s, %s)', (username, password, email))
-#         mysql.connection.commit()
-#         msg = " "
-#         return render_template('now.html')
-#     elif request.method == "POST":
-#         msg = "page not found "
-#         return render_template("register.html", msg = msg)
+@app.route("/reg")
+def reg():
+    if request.method== "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
+        username = request.form["username"]
+        email = request.form["email"]
+        password = request.form["password"]
+        cursor = mysql.connection.cursor()
+        cursor.execute('INSERT INTO #  VALUES (%s, %s, %s)', (username, password, email))
+        mysql.connection.commit()
+        msg = " "
+        return render_template('now.html')
+    elif request.method == "POST":
+        msg = "page not found "
+        return render_template("register.html", msg = msg)
+
+
 
 
 
