@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session,redirect, url_for
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 
@@ -32,7 +32,7 @@ def reg():
         return render_template('now.html')
     elif request.method == "POST":
         msg = "page not found "
-        return render_template("register.html", msg = msg)
+        return redirect(url_for('reg'), msg = msg)
 
 @app.route ('/log', methods=['GET', 'POST'])
 def log():

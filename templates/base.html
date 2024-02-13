@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	
 <!--===============================================================================================-->	
 <link rel="icon" type="image/png" href="static/images/icons/favicon.png"/>
 <!--===============================================================================================-->
@@ -29,6 +36,10 @@
 	<link rel="stylesheet" type="text/css" href="static/css/main.css">
 <!--===============================================================================================-->
 <!-- <header> -->
+</head>
+<body>
+	{% block navbar %}
+
 	<!-- Header desktop -->
 	<div class="container-menu-desktop">
 		<!-- Topbar -->
@@ -47,7 +58,7 @@
 						My Account
 					</a>
 
-					<a href="register.html" class="flex-c-m trans-04 p-lr-25">
+					<a href="{{ url_for('reg')}}" class="flex-c-m trans-04 p-lr-25">
 						Register
 					</a>
 
@@ -401,3 +412,7 @@
 	});
 </script>
     <script src="static/js/main.js"></script>
+
+{% endblock %}
+</body>
+</html>
