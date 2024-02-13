@@ -32,7 +32,7 @@ def reg():
         return render_template('now.html')
     elif request.method == "POST":
         msg = "page not found "
-        return redirect(url_for('reg'), msg = msg)
+        return render_template('register.html', msg = msg)
 
 @app.route ('/log', methods=['GET', 'POST'])
 def log():
