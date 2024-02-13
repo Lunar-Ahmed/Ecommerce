@@ -19,14 +19,15 @@ def index():
     return render_template('register.html')
 
 
+
 @app.route("/reg")
 def reg():
-    if request.method== "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
+    if request.method == "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
         username = request.form["username"]
         email = request.form["email"]
         password = request.form["password"]
         cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO #  VALUES (%s, %s, %s)', (username, password, email))
+        cursor.execute('INSERT INTO timed  VALUES (%s, %s, %s)', (username, email, password))
         mysql.connection.commit()
         msg = "Registration Successful"
         return render_template('now.html')
@@ -40,17 +41,17 @@ def log():
         email = request.form ['email']
         password = request.form ['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT* FROM / WHERE email = %s AND password = %s', (email, password))
+        cursor.execute('SELECT* FROM timed WHERE email = %s AND password = %s', (email, password))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
             session['email'] = account['email']
             session['password'] = account['password']
             msg = 'Logged in successful !'
-            return render_template ('/', msg=msg)
+            return render_template ('now.html', msg=msg)
         else:
             msg = 'Plase fill out form'
-            return render_template ('/', msg=msg)
+            return render_template ('login.html', msg=msg)
 
 
 
