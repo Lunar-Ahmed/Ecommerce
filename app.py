@@ -41,7 +41,7 @@ def log():
         email = request.form ['email']
         password = request.form ['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT* FROM timed WHERE email = %s AND password = %s', (email, password))
+        cursor.execute('SELECT* FROM ecommerce WHERE email = %s AND password = %s', (email, password))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
