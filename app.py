@@ -27,10 +27,10 @@ def reg():
         email = request.form["email"]
         password = request.form["password"]
         cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO timed  VALUES (%s, %s, %s)', (username, email, password))
+        cursor.execute('INSERT INTO ecommerce  VALUES (%s, %s, %s)', (username, email, password))
         mysql.connection.commit()
         msg = "Registration Successful"
-        return render_template('now.html')
+        return render_template('login.html.html')
     elif request.method == "POST":
         msg = "page not found "
         return render_template('register.html', msg = msg)
