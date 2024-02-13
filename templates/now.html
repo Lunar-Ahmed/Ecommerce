@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Home</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>Template Inheritance</h1>
+{% endblock %}
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="static/images/icons/favicon.png"/>
 <!--===============================================================================================-->
@@ -34,9 +33,10 @@
 	<link rel="stylesheet" type="text/css" href="static/css/util.css">
 	<link rel="stylesheet" type="text/css" href="static/css/main.css">
 <!--===============================================================================================-->
-</head>
-<body class="animsition">
-	{% block page_content %}
+
+<!-- <body class="animsition"> -->
+	
+
 	<!-- Header -->
 
 
@@ -1284,8 +1284,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</div>
 		</div>
 	</div>
-	{% endblock %}
-
 <!--===============================================================================================-->	
 	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -1388,5 +1386,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!--===============================================================================================-->
 	<script src="static/js/main.js"></script>
 
-</body>
-</html>
+<!-- </body> -->
+<!-- </html> -->

@@ -16,7 +16,7 @@ mysql= MySQL(app)
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('now.html')
 
 
 @app.route("/reg")
@@ -28,7 +28,7 @@ def reg():
         cursor = mysql.connection.cursor()
         cursor.execute('INSERT INTO #  VALUES (%s, %s, %s)', (username, password, email))
         mysql.connection.commit()
-        msg = " "
+        msg = "Registration Successful"
         return render_template('now.html')
     elif request.method == "POST":
         msg = "page not found "
