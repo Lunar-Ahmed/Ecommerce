@@ -17,8 +17,11 @@ mysql= MySQL(app)
 def index():
     return render_template('index.html')
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
-@app.route("/reg")
+@app.route("/reg", methods=['GET','POST'])
 def reg():
     if request.method == "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
         username = request.form["username"]
