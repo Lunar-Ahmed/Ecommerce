@@ -36,7 +36,9 @@ def blog():
 def shopping():
     return render_template('shoping-cart.html')
 
-@ap
+@app.route('/features')
+def features():
+    return render_template('product-cart.html')
 
 @app.route('/reg', methods=['GET','POST'])
 def reg():
