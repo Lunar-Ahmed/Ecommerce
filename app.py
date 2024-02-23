@@ -31,12 +31,13 @@ def reg():
         email = request.form["email"]
         password = request.form["password"]
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor = mysql.connection.cursor()
         cursor.execute('INSERT INTO ecommerce  VALUES (%s, %s, %s)', (username, email, password))
         mysql.connection.commit()
         msg = "Registration Successful"
-        return render_template('login.html.html')
+        return render_template('login.html')
     elif request.method == "POST":
-        msg = "page not found "
+        msg = "please fill out form "
         return render_template('register.html', msg = msg)
 
 @app.route ('/log', methods=['GET', 'POST'])
