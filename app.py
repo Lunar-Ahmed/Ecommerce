@@ -32,7 +32,7 @@ def about():
 def blog():
     return render_template('blog.html')
 
-@app.route('shopping-cart')
+@app.route('/shoping-cart')
 def shopping():
     return render_template('shoping-cart.html')
 
