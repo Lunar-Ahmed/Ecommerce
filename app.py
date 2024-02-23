@@ -24,6 +24,20 @@ def index():
 def contact():
     return render_template('contact.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
+@app.route('shopping-cart')
+def shopping():
+    return render_template('shoping-cart.html')
+
+@ap
+
 @app.route('/reg', methods=['GET','POST'])
 def reg():
     if request.method == "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
