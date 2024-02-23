@@ -3,6 +3,9 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 
 app = Flask (__name__)
+
+app.secret_key = 'key'
+
 app.config['SECRET_KEY'] = 'your-secret-key'
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -21,13 +24,13 @@ def index():
 def contact():
     return render_template('contact.html')
 
-@app.route("/reg", methods=['GET','POST'])
+@app.route('/reg', methods=['GET','POST'])
 def reg():
     if request.method == "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
         username = request.form["username"]
         email = request.form["email"]
         password = request.form["password"]
-        cursor = mysql.connection.cursor()
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('INSERT INTO ecommerce  VALUES (%s, %s, %s)', (username, email, password))
         mysql.connection.commit()
         msg = "Registration Successful"
