@@ -33,12 +33,16 @@ def blog():
     return render_template('blog.html')
 
 @app.route('/shoping-cart')
-def shopping():
+def shoping():
     return render_template('shoping-cart.html')
 
 @app.route('/features')
 def features():
-    return render_template('product-cart.html')
+    return render_template('product.html')
+
+@app.route('/product')
+def product():
+    return render_template('product-datail.html')
 
 @app.route('/reg', methods=['GET','POST'])
 def reg():
