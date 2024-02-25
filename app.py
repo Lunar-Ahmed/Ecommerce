@@ -16,7 +16,7 @@ app.config['MYSQL_DB'] = 'test'
 mysql= MySQL(app)
 
 
-@app.route("/")
+@app.route("/index")
 def index():
     return render_template('index.html')
 
@@ -38,11 +38,11 @@ def shoping():
 
 @app.route('/features')
 def features():
-    return render_template('product.html')
+    return render_template('product-cart.html')
 
 @app.route('/product')
 def product():
-    return render_template('product-detail.html')
+    return render_template('product.html')
 
 @app.route('/reg', methods=['GET','POST'])
 def reg():
