@@ -42,7 +42,7 @@ def features():
 
 @app.route('/product')
 def product():
-    return render_template('product-datail.html')
+    return render_template('product-detail.html')
 
 @app.route('/reg', methods=['GET','POST'])
 def reg():
