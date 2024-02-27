@@ -44,6 +44,8 @@ def features():
 def product():
     return render_template('product.html')
 
+
+
 @app.route('/reg', methods=['GET','POST'])
 def reg():
     if request.method == "POST" and "username" in request.form and "email" in request.form and "password" in request.form:
@@ -77,7 +79,6 @@ def log():
         else:
             msg = 'Plase fill out form'
             return render_template ('login.html', msg=msg)
-
 
 
 
