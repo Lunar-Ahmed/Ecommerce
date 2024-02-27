@@ -45,6 +45,10 @@ def product():
     return render_template('product.html')
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html')
+
 
 @app.route('/reg', methods=['GET','POST'])
 def reg():
@@ -60,7 +64,7 @@ def reg():
         return render_template('login.html')
     elif request.method == "POST":
         msg = "please fill out form "
-        return render_template('register.html', msg = msg)
+    return render_template('register.html')
 
 @app.route ('/log', methods=['GET', 'POST'])
 def log():
@@ -75,10 +79,10 @@ def log():
             session['email'] = account['email']
             session['password'] = account['password']
             msg = 'Logged in successful !'
-            return render_template ('now.html', msg=msg)
+            return render_template ('index.html')
         else:
             msg = 'Plase fill out form'
-            return render_template ('login.html', msg=msg)
+    return render_template ('login.html')
 
 
 
