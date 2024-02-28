@@ -1,13 +1,13 @@
-.container h1{
+.containers h1{
     color: black;
     margin-left: 20px;
 }
 
-.container h1:hover{
+.containers h1:hover{
     color: blue;
 }
 
-.container{
+.containers{
     margin-left: 30%;
     background-color:ghostwhite;
     width: 40%;
@@ -80,13 +80,13 @@ table{
     font-weight: bolder;
 }
 
-.container .links,
-.container .links{
+.containers .links,
+.containers .links{
     display: flex;
     padding: 0 15px;
 }
 
-.container .links a{
+.containers .links a{
     color: black;
     text-decoration: none;
     display: inline-flex;
@@ -100,7 +100,7 @@ table{
     
 }
 
-.container .links a.active{
+.containers .links a.active{
     color: blue;
     font-size: large;
     border-bottom: 3px solid blue;
@@ -108,4 +108,13 @@ table{
 
 .main-content{
     background-color: #2196f3;
+}
+
+img{
+    margin: 50%;
+
+}
+
+.error h1{
+    margin-top: 40px;
 }
