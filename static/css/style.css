@@ -8,19 +8,20 @@
 }
 
 .container{
-    margin-left: 20%;
-    background-color: darkgray;
+    margin-left: 30%;
+    background-color:ghostwhite;
     width: 40%;
     border-radius: 20px;
+    border: 1px solid blue;
 }
 
  .form-box{
     padding-bottom: 50px;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 .form-box input{
     padding-bottom: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: center;
     padding-top: 5px;
     height: 20px;
@@ -51,6 +52,7 @@ table, th, td{
 table{
     box-sizing: border-box;
     float: right;
+ 
 }  
 
 /* .menu{
@@ -94,5 +96,16 @@ table{
 
 .main-container{
     box-sizing: border-box;
+    background-color: #2196f3;
     
+}
+
+.container .links a.active{
+    color: blue;
+    font-size: large;
+    border-bottom: 3px solid blue;
+}
+
+.main-content{
+    background-color: #2196f3;
 }

@@ -68,22 +68,34 @@ def reg():
 
 @app.route ('/log', methods=['GET', 'POST'])
 def log():
-    if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
-        email = request.form ['email']
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        username = request.form ['username']
         password = request.form ['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT* FROM ecommerce WHERE email = %s AND password = %s', (email, password))
+        cursor.execute('SELECT* FROM ecommerce WHERE username = %s AND password = %s', (username, password))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
-            session['email'] = account['email']
+            session['username'] = account['username']
             session['password'] = account['password']
             msg = 'Logged in successful !'
-            return render_template ('index.html')
+            return render_template ('main.html')
         else:
             msg = 'Plase fill out form'
     return render_template ('login.html')
 
+@app.route('/login/index')
+def loggedin():
+    if 'loggedin' in session:
+        return render_template('index.html', username=['username'])
+    return redirect(url_for('/log'))
+
+@app.route('/logout')
+def logout():
+    session.pop('loggedin', None)
+    session.pop('userid', None)
+    session.pop('email', None)
+    return redirect(url_for('index'))
 
 
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="stati/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
@@ -18,8 +18,8 @@
             </div>
             <form action="{{ url_for('log') }}" method="post" autocomplete="off">
 
-                <label for="email">Email</label>
-                <input type="email" name="email" placeholder="Email" id="email" requird>
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="Username" id="username" required>
                 <br>
                 <br>
                 <label for="passord">Password</label>
