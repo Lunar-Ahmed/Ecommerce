@@ -110,11 +110,11 @@ table{
     background-color: #2196f3;
 }
 
-img{
-    margin: 50%;
+.container-menu-desktop img{
+    margin: 100px;
 
 }
 
-.error h1{
+.container-menu-desktop h1{
     margin-top: 40px;
 }
