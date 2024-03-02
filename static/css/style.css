@@ -127,5 +127,5 @@ table{
 }
 
 .error .r{
-    
+   width: fit-content; 
 }
