@@ -126,6 +126,8 @@ table{
     margin-right: 300px;
 }
 
-.error .r{
-   width: fit-content; 
+.r{
+   width: 600px; 
+   color: red;
+
 }
